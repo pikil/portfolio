@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Dark terminal background -->
+  <rect width="64" height="64" rx="10" fill="#0f111a"/>
+
+  <text
+    x="5" y="50"
+    font-family="'Courier New', Courier, monospace"
+    font-size="28"
+    font-weight="bold"
+    fill="#c792ea"
+  >&gt;</text>
+
+  <text
+    x="40" y="50"
+    font-family="'Courier New', Courier, monospace"
+    font-size="28"
+    font-weight="bold"
+    fill="lightgreen"
+    text-anchor="middle"
+    letter-spacing="1"
+  >IP</text>
+</svg>
