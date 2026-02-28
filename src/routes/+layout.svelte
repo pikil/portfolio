@@ -29,16 +29,16 @@
       if (!cursor)
         return
 
-      cursor.style.left = (clientX + cursor.clientWidth / 2) + 'px'
-      cursor.style.top  = (clientY + cursor.clientWidth / 2 ) + 'px'
+      cursor.style.left = clientX + 'px'
+      cursor.style.top  = clientY + 'px'
     })
     document.addEventListener('mousedown', () => {
       if (ring)
-        ring.style.transform = 'translate(-50%,-50%) scale(0.75)'
+        ring.style.transform = 'scale(0.75)'
     })
     document.addEventListener('mouseup',   () => {
       if (ring)
-        ring.style.transform = 'translate(-50%,-50%) scale(1)'
+        ring.style.transform = 'scale(1)'
     })
   }
 
