@@ -55,7 +55,7 @@
       <div class="tl-card relative rounded-xl overflow-hidden p-7 border border-faded/20 bg-gray-900/60">
         <div class="tl-card-bar absolute h-0.5"></div>
         {#if project.video}
-          <video src={project.video} class="rounded-2xl" muted autoplay playsinline onended={resetVideo}></video>
+          <video src={project.video} class="rounded-xl mb-5" muted autoplay playsinline onended={resetVideo}></video>
         {:else if project.image}
           <img src={project.image} alt={project.title} class="tl-thumb w-full rounded-xl object-cover mb-5" />
         {:else if project.component}
