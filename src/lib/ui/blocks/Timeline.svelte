@@ -55,7 +55,7 @@
       <div class="tl-card relative rounded-xl overflow-hidden p-7 border border-faded/20 bg-gray-900/60">
         <div class="tl-card-bar absolute h-0.5"></div>
         {#if project.video}
-          <video src={project.video} class="rounded-2xl" muted autoplay playsinline></video>
+          <video src={project.video} class="rounded-2xl" muted autoplay playsinline onended={resetVideo}></video>
         {:else if project.image}
           <img src={project.image} alt={project.title} class="tl-thumb w-full rounded-xl object-cover mb-5" />
         {:else if project.component}
@@ -170,6 +170,15 @@
     const offset = stickyBar.offsetHeight + 73 + 16 // nav + bar + gap
     const top = sectionEl?.getBoundingClientRect().top + window.scrollY - offset
     window.scrollTo({ top, behavior: 'smooth' })
+  }
+
+  const resetVideo = (e: Event) => {
+    const video = e.currentTarget as HTMLVideoElement
+
+    setTimeout(() => {
+      video.currentTime = 0
+      video.play()
+    }, 1500)
   }
 </script>
 <style>
