@@ -13,5 +13,6 @@ export interface Project {
   catLabels: string[];
   links: ProjectLink[];
   image?: string;
+  video?: string;
   component?: string[];
 }

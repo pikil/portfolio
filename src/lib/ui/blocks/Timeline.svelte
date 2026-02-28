@@ -1,4 +1,4 @@
-<div class="filter-bar reveal" bind:this={stickyBar}>
+<div class="filter-bar reveal hidden md:flex z-50 sticky" bind:this={stickyBar}>
   <button
     class="filter-btn"
     class:active={activeFilter === 'all'}
@@ -11,11 +11,7 @@
     <button
       class="filter-btn"
       class:active={activeFilter === slug}
-      style="
-        --cat-border: {color.border};
-        --cat-bg:     {color.bg};
-        --cat-text:   {color.text};
-      "
+      style="--cat-border: {color.border}; --cat-bg: {color.bg}; --cat-text: {color.text};"
       onclick={() => setFilter(slug)}
     >
       {label}
@@ -31,10 +27,12 @@
       in:fly={{ y: 24, duration: 380 }}
       out:fly={{ y: -10, duration: 200 }}
     >
-      <div class="tl-card">
-        <div class="tl-card-bar"></div>
-        {#if project.image}
-          <img src={project.image} alt={project.title} class="tl-thumb" />
+      <div class="tl-card relative rounded-xl overflow-hidden p-7 border border-faded/20 bg-gray-900/60">
+        <div class="tl-card-bar absolute h-0.5"></div>
+        {#if project.video}
+          <video src={project.video} class="rounded-2xl" muted autoplay playsinline></video>
+        {:else if project.image}
+          <img src={project.image} alt={project.title} class="tl-thumb w-full rounded-xl object-cover mb-5" />
         {:else if project.component}
           {@const [label, arg1, arg2, arg3, arg4] = project.component}
           <div class="pb-4">
@@ -149,10 +147,7 @@
 </script>
 <style>
   .filter-bar {
-    position: sticky;
-    top: 73px;
-    z-index: 50;
-    display: flex;
+    top: 85px;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-inline: -2rem;
@@ -223,12 +218,6 @@
   .tl-item:nth-child(even) .tl-card   { grid-column: 3; grid-row: 1; }
 
   .tl-card {
-    position: relative;
-    background: #141416;
-    border: 1px solid #252528;
-    border-radius: 6px;
-    padding: 1.75rem;
-    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .tl-item:hover .tl-card {
@@ -239,7 +228,6 @@
   .tl-card-bar {
     position: absolute;
     inset: 0 0 auto 0;
-    height: 2px;
     background: linear-gradient(90deg, #e8c97a, transparent);
     opacity: 0;
     transition: opacity 0.3s;
@@ -249,9 +237,6 @@
   .tl-thumb {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    margin-bottom: 1.25rem;
-    object-fit: cover;
   }
   .tl-badges, .tl-tags {
     display: flex;
