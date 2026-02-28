@@ -1,3 +1,4 @@
+import { getPath } from '$utils/generators'
 import type { Project } from './types'
 
 export const name = 'Ilia Pikulev'
@@ -28,7 +29,7 @@ export const projects: Project[] = [
     catLabels:  ['Side Projects',  'Performance'],
     links: [{ label: 'susmeter.ai', href: 'https://susmeter.ai' }],
     image: 'https://susmeter.ai/logo.svg',
-    video: '/vid/susmeter-showcase.mp4'
+    video: getPath('/vid/susmeter-showcase.mp4')
   },
   {
     id: 'make-quicker',
@@ -50,8 +51,8 @@ export const projects: Project[] = [
     categories: ['gamedev', 'WebRTC multiplayer'],
     catLabels:  ['Gamedev',  'WebRTC multiplayer'],
     links: [{ label: 'pikil.github.io/quinque', href: 'https://pikil.github.io/quinque' }],
-    image: '/img/quinque-logo.png',
-    video: '/vid/quinque-showcase.mp4'
+    image: getPath('/img/quinque-logo.png'),
+    video: getPath('/vid/quinque-showcase.mp4')
   },
   {
     id: 'yada',
@@ -87,7 +88,7 @@ export const projects: Project[] = [
     categories: ['ai/ml', 'integrations'],
     catLabels:  ['AI/ML',  'Integrations'],
     links: [{ label: 'polyvid.io', href: 'https://polyvid.io' }],
-    image: '/img/polyvid-logo.png'
+    image: getPath('/img/polyvid-logo.png')
   },
   {
     id: 'kcs-api',
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     categories: ['integrations', 'performance', 'scale'],
     catLabels:  ['Integrations',  'Performance', 'Scale'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
-    image: '/img/kcs-logo.png'
+    image: getPath('/img/kcs-logo.png')
   },
   {
     id: 'kcs-devops',
@@ -111,7 +112,7 @@ export const projects: Project[] = [
     categories: ['threejs', 'team-lead'],
     catLabels:  ['ThreeJS',  'Team Lead'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
-    image: '/img/kcs-logo.png'
+    image: getPath('/img/kcs-logo.png')
   },
   {
     id: 'coloban',
@@ -134,7 +135,7 @@ export const projects: Project[] = [
     categories: ['devops', 'team-lead', 'scale'],
     catLabels:  ['DevOps', 'Team Lead', 'Scale'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
-    image: '/img/kcs-logo.png'
+    image: getPath('/img/kcs-logo.png')
   },
   {
     id: 'robots-eye',
@@ -145,7 +146,7 @@ export const projects: Project[] = [
     categories: ['gamedev', 'crossplatform'],
     catLabels:  ['Gamedev', 'Cross-platform'],
     links: [],
-    image: '/img/robots-eye-logo.png',
-    video: '/vid/robots-eye-showcase.mp4'
+    image: getPath('/img/robots-eye-logo.png'),
+    video: getPath('/vid/robots-eye-showcase.mp4')
   }
 ]
