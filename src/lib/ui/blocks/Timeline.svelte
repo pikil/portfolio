@@ -5,18 +5,43 @@
     onclick={() => setFilter('all')}
   >
     All projects
-  </button>
+</button>
 
-  {#each [...catMap.entries()] as [slug, { label, color }] (slug)}
+  {#if showFilters}
+    {#each [...catMap.entries()] as [slug, { label, color }] (slug)}
+      <div transition:fade>
+        <button
+          class="filter-btn"
+          class:active={activeFilter === slug}
+          style="--cat-border: {color.border}; --cat-bg: {color.bg}; --cat-text: {color.text};"
+          onclick={() => setFilter(slug)}
+        >
+          {label}
+        </button>
+      </div>
+    {/each}
+  {:else}
     <button
-      class="filter-btn"
-      class:active={activeFilter === slug}
-      style="--cat-border: {color.border}; --cat-bg: {color.bg}; --cat-text: {color.text};"
-      onclick={() => setFilter(slug)}
+      class="filter-btn refine"
+      onclick={() => showFilters = true}
     >
-      {label}
+      <span class="pr-2">Refine</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <line x1="4"  y1="6"  x2="20" y2="6"/>
+        <line x1="7"  y1="12" x2="17" y2="12"/>
+        <line x1="10" y1="18" x2="14" y2="18"/>
+      </svg>
     </button>
-  {/each}
+  {/if}
 </div>
 
 <div class="timeline">
@@ -89,7 +114,7 @@
   {/each}
 </div>
 <script lang="ts">
-  import { fly }  from 'svelte/transition'
+  import { fade, fly }  from 'svelte/transition'
   import { flip } from 'svelte/animate'
   import { projects } from '$lib/data/const'
   import { SvelteMap } from 'svelte/reactivity'
@@ -124,6 +149,8 @@
 
   let activeFilter = $state<string>('all')
 
+  let showFilters = $state<boolean>(false)
+
   let sectionEl = $state<HTMLElement | null>(null)
 
   let stickyBar = $state<HTMLElement | null>(null)
@@ -147,7 +174,7 @@
 </script>
 <style>
   .filter-bar {
-    top: 85px;
+    top: 93px;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-inline: -2rem;
@@ -168,8 +195,12 @@
     cursor: none;
     transition: border-color 0.2s, background 0.2s, color 0.2s;
     border: 1px solid #252528;
-    background: transparent;
+    background-color: transparent;
     color: #6b6967;
+  }
+
+  .filter-btn.refine {
+    background-color: transparent;
   }
 
   .filter-btn.active {
