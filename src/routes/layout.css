@@ -27,7 +27,7 @@
     @apply min-h-screen text-on-surface bg-surface font-sans font-light leading-relaxed overflow-x-hidden cursor-none;
   }
 
-  a.btn {
+  button, a.btn {
     @apply inline-flex items-center px-7 py-3 font-mono text-[0.75rem] tracking-widest uppercase rounded-sm transition-all cursor-none;
   }
 

@@ -2,6 +2,8 @@ import type { Project } from './types'
 
 export const name = 'Ilia Pikulev'
 
+export const email = '=MXdz1WZ0VmchlGQn1WYpxmLj9Wb'
+
 export const projects: Project[] = [
   {
     id: 'mega-performance',

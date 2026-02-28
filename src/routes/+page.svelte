@@ -75,7 +75,37 @@
   </div>
 </section>
 
+<hr class={separatorCss} />
+
+<section id="contact" class="py-28 relative z-2 text-center">
+  <div class="max-w-275 mx-auto px-8">
+    <p
+      class="reveal opacity-0 translate-y-8 font-mono text-[0.65rem] tracking-[0.25em] uppercase text-accent mb-4"
+      style="transition: opacity 0.7s ease, transform 0.7s ease"
+    >// Get in touch</p>
+    <h2
+      class="reveal opacity-0 translate-y-8 font-display text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.15] mb-4"
+      style="transition: opacity 0.7s ease, transform 0.7s ease"
+    >Let's work together</h2>
+    <p
+      class="reveal opacity-0 translate-y-8 text-[#9e9b95] text-[1.05rem] max-w-[55ch] mx-auto mb-12"
+      style="transition: opacity 0.7s ease, transform 0.7s ease"
+    >
+      Have a project in mind, or just want to chat? My inbox is always open.
+    </p>
+    <button class="btn-flat" onclick={sendEmail}>[ Send an email ]</button>
+    <div class="reveal opacity-0 translate-y-8 flex justify-center gap-6 mt-10" style="transition: opacity 0.7s ease, transform 0.7s ease">
+      {#each contactLinks as { href, label, sublabel } (href)}
+        <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+        <a {href} title={label} class={contactLinkCss} target="_blank">{sublabel}</a>
+      {/each}
+    </div>
+  </div>
+</section>
+
 <script lang="ts">
+  import { email } from '$lib/data/const'
+  import type { Link } from '$lib/data/types'
   import DeveloperInfo from '$ui/blocks/DeveloperInfo.svelte'
   import Timeline from '$ui/blocks/Timeline.svelte'
   import Typewriter from '$ui/components/Typewriter.svelte'
@@ -84,6 +114,8 @@
   const separatorCss = 'border-faded/10 relative z-2'
   const tagCss = 'px-3 py-1 border border-edge rounded-sm font-mono text-[0.75rem]'
     + ' text-faded hover:border-accent/60 hover:text-accent transition-colors'
+  const contactLinkCss = 'w-10.5 h-10.5 border border-edge rounded-full flex items-center justify-center font-mono text-[0.7rem]'
+    + ' text-faded hover:border-accent hover:text-accent hover:-translate-y-1 transition-all'
 
   const systemWords = [
     'scale',
@@ -110,6 +142,19 @@
     'Electron'
   ]
 
+  const contactLinks: Link[] = [
+    {
+      label: 'GitHub',
+      sublabel: 'GH',
+      href: 'https://github.com/pikil'
+    },
+    {
+      label: 'LinkedIn',
+      sublabel: 'LI',
+      href: 'https://www.linkedin.com/in/ilia-pikulev/'
+    }
+  ]
+
   const setRevealObserver = () => {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(({ isIntersecting, target }) => {
@@ -120,6 +165,16 @@
       })
     }, { threshold: 0.12 })
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el))
+  }
+
+  const sendEmail = () => {
+    const e = atob(email.split('').reverse().join('')).split('').reverse().join('')
+    const m = atob('==gOvRHbpFWb'.split('').reverse().join(''))
+    const s = atob('9Q3YlpmY1N3P'.split('').reverse().join(''))
+
+    const link = document.createElement('a')
+    link.href = m + e + s + encodeURIComponent('Question about portfolio')
+    link.click()
   }
 
   onMount(setRevealObserver)

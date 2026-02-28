@@ -16,3 +16,9 @@ export interface Project {
   video?: string;
   component?: string[];
 }
+
+export interface Link {
+  label: string;
+  sublabel?: string;
+  href: string;
+}
