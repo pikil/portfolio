@@ -11,7 +11,7 @@
         </h1>
         <p class="mt-7 text-[1.05rem] text-faded max-w-[38ch] opacity-0 animate-fu-4">
           <!-- eslint-disable-next-line max-len -->
-          10+ years delivering high-impact solutions across enterprise and startup environments — from authentication systems to billing platforms to partner integrations.
+          10+ years delivering high-impact solutions across enterprise and startup environments.
         </p>
         <div class="mt-10 flex flex-wrap gap-4 opacity-0 animate-fu-5">
           <a href="#projects" class="btn btn-accent">
@@ -40,8 +40,6 @@
         <p class="text-[#9e9b95] mb-5">
           <!-- eslint-disable-next-line max-len -->
           Auckland-based senior developer and software architect with 10+ years delivering high-impact solutions across enterprise and startup environments. Proven track record designing authentication systems, billing platforms, enterprise APIs, and partner integrations.
-          <!-- eslint-disable-next-line max-len -->
-          Deep focus on reliability, observability, and incident response — combined with strong technical foundations, practical judgment, and clear communication across product, design, and engineering teams.
         </p>
         <p class="text-[#9e9b95] mb-5">
           When I'm not writing code, you'll find me in NZ Ballroom dance community or tinkering with side projects that are inevitably too ambitious.
