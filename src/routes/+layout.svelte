@@ -2,7 +2,7 @@
 
 <div id="noise-div" class="fixed inset-0 z-1 pointer-events-none opacity-[0.03]"></div>
 
-<div id="cursor" class="fixed top-0 left-0 z-9999 pointer-events-none">
+<div id="cursor" class="fixed top-0 left-0 z-9999 pointer-events-none" class:hidden={platform.is.webMobile}>
   <div
     id="cursor-ring"
     class="relative w-9 h-9 rounded-full border border-accent -translate-x-1/2 -translate-y-1/2 transition-transform duration-120"
@@ -18,10 +18,14 @@
   import favicon from '$lib/assets/favicon.svg'
   import { onMount } from 'svelte'
   import Nav from '$ui/layout/Nav.svelte'
+  import platform from '$utils/platform'
 
   let { children } = $props()
 
   const setCursor = () => {
+    if (platform.is.webMobile)
+      return
+
     const cursor = document.getElementById('cursor')
     const ring   = document.getElementById('cursor-ring')
 
