@@ -47,6 +47,7 @@
 <div class="timeline">
   {#each visibleProjects as project (project.id)}
     <article
+      id={project.id}
       class="tl-item group"
       animate:flip={{ duration: 400 }}
       in:fly={{ y: 24, duration: 380 }}
@@ -72,11 +73,9 @@
           {#each project.categories as slug (slug)}
             {@const cat = catMap.get(slug)}
             {#if cat}
-              <span class="cat-badge" style="
-                border-color: {cat.color.border};
-                background:   {cat.color.bg};
-                color:        {cat.color.text};
-              ">{cat.label}</span>
+              <span class="cat-badge" style="border-color: {cat.color.border}; background: {cat.color.bg}; color: {cat.color.text};">
+                {cat.label}
+              </span>
             {/if}
           {/each}
         </div>
@@ -87,7 +86,9 @@
           {/each}
         </div>
 
-        <h3 class="tl-title">{project.title}</h3>
+        <h3 class="tl-title">
+          <a href={'#' + project.id}>{project.title}</a>
+        </h3>
         <p class="tl-desc">{project.description}</p>
 
         <div class="tl-links">
