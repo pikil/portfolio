@@ -24,7 +24,7 @@
         {/each}
       ],<br>
       &nbsp;&nbsp;dev_years: <span class="text-yellow-600">"{years}+"</span>,<br>
-      &nbsp;&nbsp;coffee: <span class="text-indigo-400/90">[{coffee}]</span>,<br>
+      &nbsp;&nbsp;coffee: <span class="text-indigo-400/90">[{coffee}]</span><br>
       &#125;;<br><br>
       <span class="text-indigo-400/90">export default</span> developer;
     </div>
