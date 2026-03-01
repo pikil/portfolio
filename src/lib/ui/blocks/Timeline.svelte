@@ -107,7 +107,7 @@
 
       <div class="tl-spine">
         <div class="tl-dot"></div>
-        <span class="tl-year bg-surface py-1">{project.year}</span>
+        <span class="tl-year z-3 py-1">{project.year}</span>
       </div>
 
       <div class="tl-spacer"></div>
