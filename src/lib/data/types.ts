@@ -14,7 +14,7 @@ export interface Project {
   links: ProjectLink[];
   image?: string;
   video?: string;
-  component?: string[];
+  component?: Array<string|undefined>;
 }
 
 export interface Link {

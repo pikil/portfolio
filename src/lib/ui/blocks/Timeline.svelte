@@ -60,10 +60,18 @@
         {:else if project.image}
           <img src={project.image} alt={project.title} class="tl-thumb w-full rounded-xl object-cover mb-5" />
         {:else if project.component}
-          {@const [label, arg1, arg2, arg3, arg4] = project.component}
+          {@const [ label, arg1, arg2, arg3, arg4, arg5, arg6, arg7 ] = project.component}
           <div class="pb-4">
             {#if label === 'perf'}
-              <PerformanceIncrease title={arg1} before={parseInt(arg2)} after={parseInt(arg3)} unit={arg4} />
+              <PerformanceIncrease
+                title={arg1}
+                before={parseInt(arg2 || '0')}
+                after={parseInt(arg3 || '0')}
+                unit={arg4}
+                afterLabel={arg5}
+                beforeLabel={arg6}
+                fasterLabel={arg7}
+              />
             {:else if label === 'seo'}
               <SeoBoost />
             {/if}

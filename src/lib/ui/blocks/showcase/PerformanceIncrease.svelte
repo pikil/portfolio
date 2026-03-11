@@ -15,33 +15,15 @@
     <span
       class="bg-linear-to-r from-green-400 to-emerald-300 bg-clip-text text-4xl font-extrabold leading-none tracking-tight text-transparent"
     >
-      {faster}×
+      {faster}{fasterSuffix}
     </span>
-    <span class="text-xs font-medium text-slate-500">faster</span>
+    <span class="text-xs font-medium text-slate-500">{fasterLabel}</span>
   </div>
 
-  <!-- Bars -->
   <div class="mb-6 flex flex-col gap-4">
-    <!-- Before -->
     <div>
       <div class="mb-1.5 flex items-center justify-between">
-        <span class="text-[0.8rem] font-semibold uppercase tracking-wide text-slate-400">Before</span>
-        <span class="font-mono text-[0.95rem] font-bold text-red-500">
-          {animatedBefore.toLocaleString()}<span class="ml-0.5 text-xs font-normal opacity-70">{unit}</span>
-        </span>
-      </div>
-      <div class="h-2.5 w-full overflow-hidden rounded-full bg-[#1a1d2e]">
-        <div
-          class="h-full rounded-full bg-linear-to-r from-red-500 to-red-400 transition-[width] ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style="width: {visible ? '100%' : '0%'}; transition-duration: {animationDuration}ms;"
-        ></div>
-      </div>
-    </div>
-
-    <!-- After -->
-    <div>
-      <div class="mb-1.5 flex items-center justify-between">
-        <span class="text-[0.8rem] font-semibold uppercase tracking-wide text-slate-400">After</span>
+        <span class="text-[0.8rem] font-semibold uppercase tracking-wide text-slate-400">{afterLabel}</span>
         <span class="font-mono text-[0.95rem] font-bold text-green-500">
           {animatedAfter.toLocaleString()}<span class="ml-0.5 text-xs font-normal opacity-70">{unit}</span>
         </span>
@@ -53,6 +35,20 @@
         ></div>
       </div>
     </div>
+    <div>
+      <div class="mb-1.5 flex items-center justify-between">
+        <span class="text-[0.8rem] font-semibold uppercase tracking-wide text-slate-400">{beforeLabel}</span>
+        <span class="font-mono text-[0.95rem] font-bold text-red-500">
+          {animatedBefore.toLocaleString()}<span class="ml-0.5 text-xs font-normal opacity-70">{unit}</span>
+        </span>
+      </div>
+      <div class="h-2.5 w-full overflow-hidden rounded-full bg-[#1a1d2e]">
+        <div
+          class="h-full rounded-full bg-linear-to-r from-red-500 to-red-400 transition-[width] ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style="width: {visible ? '100%' : '0%'}; transition-duration: {animationDuration}ms;"
+        ></div>
+      </div>
+    </div>
   </div>
 </div>
 <script lang="ts">
@@ -61,6 +57,9 @@
     before?: number;
     after?: number;
     unit?: string;
+    afterLabel?: string;
+    beforeLabel?: string;
+    fasterLabel?: string;
     animationDuration?: number;
   }
 
@@ -69,6 +68,9 @@
     before = 1200,
     after = 150,
     unit = 'ms',
+    afterLabel = 'After',
+    beforeLabel = 'Before',
+    fasterLabel = 'faster',
     animationDuration = 1500
   }: Props = $props()
 
@@ -98,7 +100,8 @@
     }
   })
 
-  const faster = $derived((before / after).toFixed(1))
+  const faster = $derived((after > 0 ? before / after : -before).toFixed(1))
+  const fasterSuffix = $derived(parseInt(faster) > 0 ? '×' : '')
 
   const observe = (node: HTMLElement) => {
     const observer = new IntersectionObserver(
