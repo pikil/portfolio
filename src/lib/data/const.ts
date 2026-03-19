@@ -7,12 +7,23 @@ export const email = '=MXdz1WZ0VmchlGQn1WYpxmLj9Wb'
 
 export const projects: Project[] = [
   {
+    id: 'yada-moderation-automation',
+    title: 'YADA: Automated moderation',
+    year: '2026',
+    description: 'Introduced Agentic workflows to moderate user job and specialist requests which removed human intervention entirely.',
+    tags: ['n8n', 'JavaScript', 'Bash', 'AI/ML'],
+    categories: ['n8n', 'automation', 'ai/ml', 'integrations'],
+    catLabels:  ['n8n',  'Automation', 'AI/ML', 'Integrations'],
+    links: [{ label: 'yada.co.nz', href: 'https://yada.co.nz' }],
+    image: getPath('/img/n8n-workflow.png')
+  },
+  {
     id: 'mega-performance',
     title: 'MEGA: Media Library Performance for 1.7 million nodes',
     year: '2026',
     // eslint-disable-next-line max-len
     description: 'Using Browser APIs and caching techniques, achieved an incredible boost in the Web Media loading speeds. Before the Media Library was painfully slow on large accounts.',
-    tags: ['JavaScript', 'IndexedDB', 'Bitwise', 'Observers'],
+    tags: ['JavaScript', 'IndexedDB', 'Browser APIs'],
     categories: ['performance', 'frontend'],
     catLabels:  ['Performance',  'Frontend'],
     links: [{ label: 'mega.io', href: 'https://mega.io' }],
@@ -24,7 +35,7 @@ export const projects: Project[] = [
     year: '2026',
     // eslint-disable-next-line max-len
     description: 'Created a tool for identifying AI/Deepfake/Editing signatures in media files. Built as a public utility at the intersection of ML and media analysis, with a clean and free web interface for anyone to use.',
-    tags: ['AI/ML', 'Svelte', 'Web Workers'],
+    tags: ['AI/ML', 'JavaScript', 'Svelte', 'Web Workers'],
     categories: ['side-projects', 'performance'],
     catLabels:  ['Side Projects',  'Performance'],
     links: [{ label: 'susmeter.ai', href: 'https://susmeter.ai' }],
@@ -98,7 +109,7 @@ export const projects: Project[] = [
     year: '2021',
     // eslint-disable-next-line max-len
     description: 'Designed and built one of the first AI/ML projects in the world to translate YouTube videos into any language in an instant. The translation is synced, contains audio and text captions. [The project is sunset]',
-    tags: ['Javascript', 'PHP', 'AI/ML'],
+    tags: ['JavaScript', 'PHP', 'AI/ML', 'Bash'],
     categories: ['ai/ml', 'integrations', 'innovations'],
     catLabels:  ['AI/ML',  'Integrations', 'Innovations'],
     links: [{ label: 'polyvid.io', href: 'https://polyvid.io' }],
@@ -110,7 +121,7 @@ export const projects: Project[] = [
     year: '2020–2022',
     // eslint-disable-next-line max-len
     description: 'Designed and built a REST API platform connecting internal systems with Microsoft Dynamics 365, Stripe, Humm, Zip, PayPal, and custom CNC machinery interfaces.',
-    tags: ['MS365', 'Vectorworks', 'CNC', 'Bash'],
+    tags: ['MS365', 'Vectorworks', 'CNC', 'Bash', 'Python'],
     categories: ['integrations', 'performance', 'scale'],
     catLabels:  ['Integrations',  'Performance', 'Scale'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
@@ -121,7 +132,7 @@ export const projects: Project[] = [
     title: 'Kitchen Cabinets and Stones: Smart replicas reduced cost by 90%',
     year: '2021',
     description: 'Using the smart replicas orchestration for the Stats engine, the data is updated only when needed.',
-    tags: ['JavaScript', 'IndexedDB', 'Bitwise', 'Observers'],
+    tags: ['Bash', 'AWS', 'DevOps', 'Scheduling'],
     categories: ['performance', 'devops', 'cost_efficiency'],
     catLabels:  ['Performance',  'DevOps', 'Cost efficiency'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
@@ -133,7 +144,7 @@ export const projects: Project[] = [
     year: '2017–2020',
     // eslint-disable-next-line max-len
     description: 'Built a real-time delivery estimation mechanism to get an instant quote for any size of the pallet(s) order delivering to any place in New Zealand',
-    tags: ['ThreeJS', 'Mainfreight', 'Bin Packing problem solve'],
+    tags: ['ThreeJS', 'Mainfreight', 'Python', 'Bin Packing problem solve'],
     categories: ['threejs', 'team-lead', 'mentoring', 'integrations'],
     catLabels:  ['ThreeJS',  'Team Lead', 'Mentoring', 'Integrations'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],
@@ -156,7 +167,7 @@ export const projects: Project[] = [
     title: 'Kitchen Cabinets and Stones: Scale and Solutions Architect',
     year: '2015–2020',
     description: 'Built a framework that allowed the family business to scale to the natiowide kitchen retailer',
-    tags: ['CI/CD', 'PHP', 'Javascript', 'Jenkins', 'Docker', 'AWS', 'Bash'],
+    tags: ['CI/CD', 'PHP', 'Python', 'JavaScript', 'Jenkins', 'Docker', 'AWS', 'Bash'],
     categories: ['devops', 'team-lead', 'scale', 'mentoring'],
     catLabels:  ['DevOps', 'Team Lead', 'Scale', 'Mentoring'],
     links: [{ label: 'kitchencabinets.co.nz', href: 'https://kitchencabinets.co.nz' }],

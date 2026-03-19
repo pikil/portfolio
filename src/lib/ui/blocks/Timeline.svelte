@@ -198,7 +198,6 @@
     margin-inline: -2rem;
     padding: 0.75rem 2rem;
     margin-bottom: 2.5rem;
-    background: rgba(12, 12, 14, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #252528;
   }

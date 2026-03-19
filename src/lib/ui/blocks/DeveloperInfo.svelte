@@ -37,8 +37,8 @@
     'scale',
     'platform-architecture',
     'api-design',
-    'integrations',
-    'fullstack'
+    'ai-automation',
+    'integrations'
   ]
 
   const locations = [
