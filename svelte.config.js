@@ -8,7 +8,7 @@ const config = {
       base: '/portfolio'
     },
     adapter: adapter({
-      fallback: 'index.html'
+      fallback: '200.html'
     }),
     alias: {
       $ui: 'src/lib/ui',
