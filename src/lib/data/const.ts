@@ -52,7 +52,7 @@ export const projects: Project[] = [
     categories: ['performance', 'frontend', 'innovations'],
     catLabels:  ['Performance',  'Frontend', 'Innovations'],
     links: [{ label: 'github.com/pikil/make-quicker', href: 'https://github.com/pikil/make-quicker' }],
-    component: ['perf', 'Faster sorting on 1m unique numbers', '170', '12', 'ms', 'My sort', 'Array.prototype.sort']
+    component: ['perf', 'Faster sorting on unique numbers', '170', '12', 'ms', 'make-quicker on 1M numbers', 'Array.prototype.sort']
   },
   {
     id: 'yada-ai',
